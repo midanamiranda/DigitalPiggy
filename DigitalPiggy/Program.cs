@@ -9,11 +9,14 @@ namespace DigitalPiggy
             // creates the digital Piggy
             Piggy piggy = new Piggy();
 
-            // connects the balanceUpdate event to the action to be done
-            piggy.balanceUpdate += balanceUpdateListener;
+            // Message to be displayed when the balance gets an update
+            piggy.balanceUpdate += (balance) 
+                => Console.WriteLine($"The balance amount is {balance}.");
+            
 
-            // connects the reachedGoal event to the action to be done
-            piggy.balanceGoalReached += reachedGoalListener;
+            // Message to be displayed when the goal is reached
+            piggy.balanceGoalReached += (balance) 
+                => Console.WriteLine($"You reached your savings goals! You have {balance}.");
 
             string amount;
             do
